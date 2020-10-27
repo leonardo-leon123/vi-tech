@@ -169,6 +169,44 @@ span{
     {
         font-size: 25px;
     }
+   @media (max-width: 420px)
+{
+    .main-section
+    {
+        font-size: 20px;
+    }
+    button
+    {
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+    .about-section
+    {
+        font-size: 20px;
+    }
+    .about h2
+    {
+        color: white;
+        font-size: 15px;
+    }
+    .about h3
+    {
+        color: white;
+        font-size: 13px;
+    }
+    
+
+    .proyect-section
+    {
+        font-size: 20px;
+    }
+    .proyect h2
+    {
+        font-size: 15px;
+    }
+
+}
+
 
 }
 
