@@ -138,11 +138,37 @@ span{
 {
     .main-section
     {
-        font-size: 20px;
+        font-size: 30px;
     }
     button
     {
         padding: 5px 20px;
         font-size: 18px;
     }
+    .about-section
+    {
+        font-size: 30px;
+    }
+    .about h2
+    {
+        color: white;
+        font-size: 25px;
+    }
+    .about h3
+    {
+        color: white;
+        font-size: 20px;
+    }
+    
+
+    .proyect-section
+    {
+        font-size: 30px;
+    }
+    .proyect h2
+    {
+        font-size: 25px;
+    }
+
 }
+
