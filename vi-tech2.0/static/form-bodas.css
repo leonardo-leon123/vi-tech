@@ -1,0 +1,94 @@
+html {
+    background: url(../static/img/cute-dinosaur.jpg) no-repeat center center fixed;
+    background-color: #FEDFE7;
+  }
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #FEDFE7;
+
+
+}
+.box    
+{
+    width: 300px;
+    padding: 35px;
+    position: absolute;
+    top: 300px;
+    left: 52%;
+    transform: translate(-50%,-40%);
+    background: #7eccd8;;
+    text-align: center;
+    border-radius: 20px;
+}
+.box h1 
+{
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid #006ae2;
+    border-radius: 24px;
+    padding: 12px 10px;
+    outline: none;
+    margin-bottom: 20px;
+}
+.box input[type="text"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #f08ab9;
+    padding: 15px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    margin-top: 2px;
+}
+.box input[type="text"]:focus
+{
+    width: 215px;
+    border-color: #df468b;
+}
+.box input[type="text"]::placeholder
+{
+    color: white;
+    opacity: 1;
+}
+.box input[type="submit"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2098aa;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.box input[type="submit"]:hover
+{
+    background: #2098aa;
+}
+h2{
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+p
+{
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0px 10px;
+    margin: 0px auto;
+}

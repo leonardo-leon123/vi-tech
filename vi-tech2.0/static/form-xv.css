@@ -1,0 +1,100 @@
+html {
+    background: url(../static/img/cute-puppy.jpg)no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    background-color: #F5F5F5;
+  }
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+.box    
+{
+    width: 300px;
+    padding: 35px;
+    position: absolute;
+    top: 350px;
+    left: 52%;
+    transform: translate(-50%,-42%);
+    background:#12c5e7;
+    text-align: center;
+    border-radius: 20px;
+}
+.box h1 
+{
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+    border: 2px solid #f84960;
+    border-radius: 24px;
+    padding: 12px 10px;
+    outline: none;
+    margin-bottom: 20px;
+}
+.box input[type="text"],.box input[type="date"],.box input[type="time"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #e79c12;
+    padding: 15px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    color: white;
+    margin-top: 2px;
+}
+.box input[type="text"]:focus,.box input[type="date"]:focus,.box input[type="time"]:focus
+{
+    width: 215px;
+    border-color: #8b5e0b;
+}
+.box input[type="text"]::placeholder,.box input[type="date"]::placeholder,.box input[type="time"]::placeholder
+{
+    color: white;
+    opacity: 1;
+}
+
+.box input[type="submit"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #9c12e7;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    color: white;
+    opacity: 1;
+}
+.box input[type="submit"]:hover
+{
+    background: #9c12e7;
+}
+h2{
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+p
+{
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 0px 10px;
+    margin: 0px auto;
+}

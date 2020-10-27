@@ -1,0 +1,148 @@
+.hero
+{
+   text-align: center;
+   color: white;
+
+}
+
+.button
+{
+    text-align: center;
+}
+.main
+{
+    background-color: rgba(0,0,0,0.9);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../static/img/party.jpg");
+    background-size: cover;
+    height: calc(100vh - 1px);
+    width: 100%;
+    position: relative;
+}
+.main-section
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 45px;
+}
+button
+{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 28px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  transition: all .2s ease-in-out; 
+}
+button a
+{
+    color: white;
+    text-decoration: none;
+}
+button a:hover
+{
+    background: none;
+    color:white;
+}
+button:hover
+{
+    transform: scale(1.1); 
+}
+.about
+{
+    background-color: #1f9eff;
+    background-size: cover;
+    height: calc(100vh - 1px);
+    width: 100%;
+    position: relative;
+}
+.about-section
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 45px;
+}
+.about h1
+{
+    color: white;
+    text-align: center;
+}
+.about h2
+{
+    color: white;
+    font-size: 30px;
+}
+.about h3
+{
+    color: white;
+    font-size: 25px;
+}
+.about hr
+{
+    color: white;
+}
+.proyect
+{
+    background-color: rgba(0, 0, 0, 0.966);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.5)), url("../static/img/about-party.jpg");
+    background-size: cover;
+    height: calc(100vh - 1px);
+    width: 100%;
+    position: relative;
+}
+.proyect-section
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 45px;
+}
+.proyect h1 
+{
+    color: white;
+    text-align: center;
+}
+.proyect h2
+{
+    color: white;
+    font-size: 30px;
+}
+.proyect hr
+{
+    color: white;
+}
+span{
+    background: white !important;
+}
+.fp-tooltip 
+{
+    font-size: 22px !important;
+}
+
+
+@media (max-width: 858px)
+{
+    .main-section
+    {
+        font-size: 20px;
+    }
+    button
+    {
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+}

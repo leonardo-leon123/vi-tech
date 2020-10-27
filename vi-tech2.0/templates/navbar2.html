@@ -1,0 +1,14 @@
+
+<link rel="stylesheet" href="../static/navbar.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars" >
+        </i></label>
+    <label class="logo"> <a href="{{url_for('app.index')}}"><img src="../static/img/sonora-crop.gif" width="100px" alt="vi tech"> </a> </label>
+    <ul>
+        <li><a href="{{url_for('auth.login')}}">Iniciar Sesión</a></li>
+        <li><a href="{{url_for('auth.registro')}}">Registrarme</a></li>
+    </ul>
+</nav>

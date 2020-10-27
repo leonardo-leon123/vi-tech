@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='form-xv.css')}}">
+    <title> Vi-Tech | Quinceaños | Generar Contrato </title>
+</head>
+<header>
+    {%include 'navbar.html'%}
+</header>
+<body>
+    <form class="box" action="#" method="post">
+        <h1>Formulario para generar el contrato de <strong> <br> XV's años </strong> </h1>
+        <p>Nombre del Papá/Mamá de la Quinceañera</p>
+        <input type="text" name="nm" placeholder="" autocomplete="on" required autofocus>
+        <p>Nombre de la Quinceañera</p>
+        <input type="text" name="nm2" placeholder="" autocomplete="on" required autofocus>
+        <p>Fecha de la Misa</p>
+        <input type="date" name="date" placeholder="" autocomplete="on" required autofocus>
+        <p>Hora de la Misa</p>
+        <input type="time" name="hour" placeholder="" autocomplete="on" required autofocus>
+        <input type="submit" value="Generar Contrato">    
+    </form>
+</body>
+</html>

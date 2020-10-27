@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.css" integrity="sha512-8M8By+q+SldLyFJbybaHoAPD6g07xyOcscIOQEypDzBS+sTde5d6mlK2ANIZPnSyxZUqJfCNuaIvjBUi8/RS0w==" crossorigin="anonymous" />
+    <title> Vi-Tech | Inicio</title>
+</head>
+<body>
+    <header>
+        {%include 'navbar.html'%}
+    </header>
+    <div id="fullPage" >
+        <div class="section main">
+            <div class="main-section">
+                <h1 class="hero" > ¡Prepara tu siguiente evento! <a href="#section1"></a></h1> 
+                <br>
+                <h2 class="hero"> ¡Genera tus contratos para el evento social que quieras en 1 sólo Click! </h2>
+                <div class="button"> 
+                    {%if not current_user.is_authenticated%}<button> <a href=" {{url_for('auth.login')}} ">Iniciar Sesión</a></button>{%endif%}
+                    {%if not current_user.is_authenticated%}<button> <a href=" {{url_for('auth.registro')}}"> Registrarse</a></button>{%endif%}
+                    {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.bodas')}} "> Unión Matrimonial </a></button>{%endif%}
+                    {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.xv')}}"> Quinceaños</a></button>{%endif%}
+                    {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.grad')}}"> Graduación Universitaria</a></button>{%endif%}
+                    {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.fiesta')}}"> Fiesta Godín</a></button>{%endif%}
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="section about">
+            <div class="about-section" >
+                <h1 class="about-hero"> ¿Quiénes somos? <a href="#section2"></a></h1>
+                <br>
+                <hr>
+                <br>
+                <h2>Somos una empresa dedicada al desarrollo de plataformas digitales para diferentes empresas como lo es contratación 
+                    desarrollo de eventos sociales a gran escala a lo largo de la Ciudad de México. </h2>
+                    <br>
+                    <h3>Contamos con las herramientas y los desarrolladores para poder generar un amplio catálogo de eventos para todo tipo de festejos, desde un bautizo hasta la celebración de una boda. Incluso si hablamos de eventos más formales como una cena de fin de año para una firma de abogados o el lanzamiento de un nuevo producto de alguna empresa. </h3>
+                </div>
+            </div>            
+        <div class="section proyect">
+            <div class="proyect-section">
+                <div>
+                    <h1> Nuestra Misión <a href="#section3"></a></h1>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2> la plataforma Vi-Tech, una plataforma que les permitirá realizar todas estas operaciones y más de una manera práctica,
+                        eficiente y visualmente intuitiva para el mayor rendimiento a la hora de procesar toda la información para que puedas generar tus contratos de manera más rapida y eficiente. </h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.min.js" integrity="sha512-Gx/C4x1qubng2MWpJIxTPuWch9O88dhFFfpIl3WlqH0jPHtCiNdYsmJBFX0q5gIzFHmwkPzzYTlZC/Q7zgbwCw==" crossorigin="anonymous"></script>
+    <script>
+        new fullpage('#fullPage',
+        {
+            autoScrolling: true,
+            navigation: true,
+            anchors: ['section1','section2','section3'],
+            navigationTooltips: ['Inicio','Quienes somos','Proyecto'],
+            showActiveTooltip: true
+        })
+    </script>
+    <script>
+        window.onscroll = function() {myFunction()};
+    
+        var navbar = document.getElementById("navbar");
+        
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        } 
+    </script>
+</body>
+</html>

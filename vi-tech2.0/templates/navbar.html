@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="../static/navbar.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<nav id="navbar" >
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars" >
+        </i></label>
+        {%if not current_user.is_authenticated%}<label class="logo"> <a href="{{url_for('app.index')}}"><img src="../static/img/sonora-crop.gif" width="100px" alt="vi tech"> </a> </label>{%endif%}
+        {%if current_user.is_authenticated%}<label class="logo"> <a href="{{url_for('app.inicio')}}"><img src="../static/img/sonora-crop.gif" width="100px" alt="vi tech"> </a> </label>{%endif%}
+    <ul>
+        <li>{%if not current_user.is_authenticated%}
+            <a href="{{ url_for('auth.login') }}" class="navbar-item">Iniciar Sesión</a>
+            {%endif%}
+        </li>
+        <li>{%if not current_user.is_authenticated%}
+            <a href="{{ url_for('auth.registro') }}" class="navbar-item">Registrarme</a>
+            {%endif%}
+        </li>
+        <li>{%if current_user.is_authenticated%}
+            <a href="{{url_for('app.bodas')}}">Bodas</a>
+            {%endif%}
+        </li>
+        <li>
+            {%if current_user.is_authenticated%}
+            <a href="{{url_for('app.xv')}}">XV'S</a>
+            {%endif%}
+        </li>
+        <li>
+            {%if current_user.is_authenticated%} 
+            <a href="{{url_for('app.grad')}}">Graduaciones</a>
+            {%endif%}
+        </li>
+        <li>
+            {%if current_user.is_authenticated%} 
+            <a href="{{url_for('app.fiesta')}}">Fiesta Godín</a>
+            {%endif%}
+        </li>
+        <li>{%if current_user.is_authenticated%}
+            <a href="{{ url_for('auth.logout') }}" class="navbar-item">Logout</a>
+            {%endif%}
+        </li>
+    </ul>
+</nav>

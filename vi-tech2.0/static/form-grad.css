@@ -1,0 +1,100 @@
+html {
+    background: url(../static/img/cute-psyduck.jpg)no-repeat;
+    background-position: left -480px;
+    background-color: #FED933;
+  }
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+.box    
+{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 400px;
+    left: 52%;
+    transform: translate(-50%,-48%);
+    background:#3358fe;
+    text-align: center;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+.box h1 
+{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid #ff0000;
+    border-radius: 24px;
+    padding: 12px 10px;
+    outline: none;
+    margin-bottom: 20px;
+}
+.box input[type="date"], .box input[type="text"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #85fee8;
+    padding: 15px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    color: white;
+    margin-top: 2px;
+}
+.box input[type="date"]:focus, .box input[type="text"]:focus
+{
+    width: 215px;
+    border-color: #019a7e;
+}
+.box input[type="date"]::placeholder, .box input[type="text"]::placeholder
+{
+    color: white;
+    opacity: 1;
+    font-size: 11px;
+}
+
+.box input[type="submit"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #d933fe;
+    padding: 14px 5px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    color: white;
+    opacity: 1;
+}
+.box input[type="submit"]:hover
+{
+    background: #d933fe;
+}
+h2{
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+p
+{
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 0px 10px;
+    margin: 0px auto;
+}
