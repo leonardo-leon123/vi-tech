@@ -1,1 +1,1 @@
-web: gunicorn app:blue_print.py
+web: gunicorn blue_print.py:app
