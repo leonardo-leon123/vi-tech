@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
+from flask_uploads import configure_uploads, IMAGES, UploadSet
 
 
 db = SQLAlchemy()
@@ -12,6 +13,10 @@ def create_app():
 
     app.config['SECRET_KEY'] = 'VI-TECH'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    app.config['UPLOADED_IMAGES_DEST'] = 'uploads/images'
+
+    images = UploadSet('images',IMAGES)
+    configure_uploads(app,images)   
 
     
     db.init_app(app)
