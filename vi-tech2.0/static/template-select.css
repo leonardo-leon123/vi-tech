@@ -4,10 +4,6 @@
    color: white;
 
 }
-.hero hr 
-{
-    color: white;
-}
 
 .button
 {
@@ -15,7 +11,8 @@
 }
 .main
 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("../static/img/social-party.jpg");
+    background-color: rgba(0,0,0,0.9);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../static/img/wedding2.jpg");
     background-size: cover;
     height: 100vh;
     
@@ -29,23 +26,6 @@
     width: 60%;
     font-size: 35px;
     padding: 20px;
-}
-.main-section h2
-{
-    text-align: center;
-    color: white;
-}
-.main-section hr
-{
-    color: white !important;
-
-}
-.username 
-{
-    color: white;
-    text-align: center;
-    font-size: 60px;
-    font-weight: 700;
 }
 button
 {

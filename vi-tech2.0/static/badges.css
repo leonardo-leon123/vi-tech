@@ -2,20 +2,24 @@
 {
    text-align: center;
    color: white;
+   font-size: 40px;
 
 }
 .hero hr 
 {
     color: white;
 }
-
+#numero_de_contratos
+{
+    text-align: center;
+}
 .button
 {
     text-align: center;
 }
 .main
 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("../static/img/social-party.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("../static/img/write.jpg");
     background-size: cover;
     height: 100vh;
     
@@ -30,22 +34,10 @@
     font-size: 35px;
     padding: 20px;
 }
-.main-section h2
-{
-    text-align: center;
-    color: white;
-}
-.main-section hr
-{
-    color: white !important;
-
-}
-.username 
-{
+.main-section h1{
     color: white;
     text-align: center;
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 40px;
 }
 button
 {
@@ -88,4 +80,17 @@ button a:hover, button a:active
         padding: 5px 20px;
         font-size: 18px;
     }
+}
+.medallas
+{
+    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753)), url("../static/img/gameover.jpg");
+    background-repeat: no-repeat;
+    
+}
+.medallas h1
+{
+    
+    text-align: center;
+    color: white;
 }

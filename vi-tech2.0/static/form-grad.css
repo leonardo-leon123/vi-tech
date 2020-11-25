@@ -1,7 +1,6 @@
 html {
-    background: url(../static/img/cute-psyduck.jpg)no-repeat;
-    background-position: left -480px;
-    background-color: #FED933;
+    background: url(./img/graduation.jpg) no-repeat;
+    background-size: cover;
   }
 
 body

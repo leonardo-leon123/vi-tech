@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='form-bodas.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> Vi-Tech | Bodas | Generar Contrato </title>
+</head>
+<header>
+    {%include 'navbar.html'%}
+</header>
+<body>
+    <div class="container">
+        <div id="main-form">
+            <form class="box" target="_blank" method="post" enctype="multipart/form-data">
+                <h1>Sube una foto al formulario de <strong> <br>  MATRIMONIOS </strong> </h1>
+                {{form.csrf_token}}
+                {{form.image(class_="examinar", onchange="readURL(this)")}}
+                <button class="upload-btn" id="submit" type="submit">Subir Imagen</button>
+                <p> Vista previa de tu Imagen</p>
+                <img id="blah" src="http://placehold.it/180" class=img-preview alt="your image" />
+            </form>
+        </div>    
+        <div id="preview">
+            <h1>INSTRUCCIONES</h1>
+            <br>
+            <h2> Escribe en una hoja con letra clara: </h2>
+            <br>
+            <hr>
+            <br>
+            <h2> -El nombre del primer conyugue </h2>
+            <br>
+            <h2> -El nombre del Segundo conyugue </h2>
+            <br>
+            <h2> -El nombre del Lugar donde se llevará acabo la ceremonia de bodas</h2>
+            <br>
+            <h2> Ejemplo: </h2>
+            <img src="https://i.ibb.co/0rW9ZBv/20201122-182930.jpg" width="250px" alt="">
+
+        </div>
+    </div>    
+    <script src="../static/js/bodas-upload.js"></script>
+    <script src="../static/js/set_badges.js"></script>
+</body>
+</html>

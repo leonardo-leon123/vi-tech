@@ -10,15 +10,36 @@
     {%include 'navbar.html'%}
 </header>
 <body>
-    <form class="box" target="_top" method="post">
-        <h1>Formulario para generar el contrato de <strong> <br>  MATRIMONIOS </strong> </h1>
-        <p>Nombre del Primer Cónyuge:</p>
-        <input type="text" name="nm1" placeholder="" autocomplete="on" required autofocus>
-        <p>Nombre del Segundo Cónyuge:</p>
-        <input type="text" name="nm2" placeholder="" autocomplete="on" required autofocus>
-        <p>Lugar de la Ceremonia:</p>
-        <input type="text" name="lc" placeholder="" autocomplete="on" required autofocus>
-        <input type="submit" value="Generar Contrato">    
-    </form>
+    <div class="container">    
+        <div id="main-form">
+            <form class="box" target="_blank" method="post" enctype="multipart/form-data">
+                <h1>Formulario para generar el contrato de <strong> <br>  MATRIMONIOS </strong> </h1>
+                <p>Nombre del Primer Cónyuge:</p>
+                <input  type="text" id="input1" name="nm1"  autocomplete="off" required  onkeyup="document.getElementById('primer-conyugue').innerHTML=this.value" onkeydown="document.getElementById('firma-conyugue1').innerHTML=this.value">
+                <p>Nombre del Segundo Cónyuge:</p>
+                <input type="text" id="input2" name="nm2"  autocomplete="off" required  onkeyup="document.getElementById('segundo-conyugue').innerHTML=this.value" onkeydown="document.getElementById('firma-conyugue2').innerHTML=this.value">
+                <p>Lugar de la Ceremonia:</p>
+                <input type="text" id="input3" name="lc"  autocomplete="off" required  onkeyup="document.getElementById('lugar').innerHTML=this.value">
+                <input type="submit" id="submit"  value="Generar Contrato">
+                <button class="upload-btn"> <a href=" {{url_for('app.bodas_upload')}} "> Subir una foto </a></button>
+            </form>
+        </div>
+        <div id="preview">
+            <meta charset="UTF-8">
+            <h1>Muestra de contrato de matrimonio </h1>
+            <h2> I. La autoridad </h2> 
+            <br>
+            <p> En el Nombre de Dios, nuestro Padre y el Señor Jesucristo, nosotros, <strong id="primer-conyugue">__________</strong> y <strong id="segundo-conyugue">__________</strong>
+                por la presente, ante estos testigos, estamos unidos en santo matrimonio. 
+                <br>
+                Como Dios pretendía en Génesis 2: 21-25, desde este día en adelante hasta la muerte.
+                La Autoridad en y para este matrimonio será el Dios Todo poderoso como se revela en la Santa Biblia, versión autorizada de 1611 King James ("la Palabra de Dios"). Sus palabras serán la Autoridad final en cada decisión y / o disputa.
+                II Las fiestas </p>   
+            <h3> <strong id="firma-conyugue1">____________</strong> FIRMA DEL PRIMER CONYUGUE </h3>
+            <h3> <strong id="firma-conyugue2">____________</strong> FIRMA DEL SEGUNDO CONYUGUE </h3>
+            <h3><strong id="lugar" >____________</strong>  Teniendo como lugar de celebración el presente matrimonio, sus familiares y amigos cercanos serán testigos de este acotesimiento tan importante</h3>
+        </div>
+    </div>
+    <script src="../static/js/set_badges.js"></script>
 </body>
 </html>

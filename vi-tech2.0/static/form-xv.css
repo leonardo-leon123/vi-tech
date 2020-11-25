@@ -1,32 +1,54 @@
-html {
-    background: url(../static/img/cute-puppy.jpg)no-repeat;
-    background-size: cover;
-    height: 700px;
-    width: 100%;
-    background-color: #F5F5F5;
-  }
-
 body
 {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-
-
+    background-color: #95daf0;
+    background: url(../static/img/quince.jpeg);
 }
-.box    
+.container
 {
-    width: 300px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.5fr 0fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "preview main-form";
+}
+#preview
+{
+    grid-area: preview;
+    background-color: white;
+    margin: 35px;
+    padding: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#preview h1
+{
+    text-align: center;
+}
+#preview strong
+{
+    color: red;
+}
+#preview p 
+{
+    font-size: 18px;
+}
+#main-form
+{
+    grid-area: main-form;
+}
+#main-form .box    
+{
+    height: 100vh;
+    width: 350px;
     padding: 35px;
-    position: absolute;
-    top: 350px;
-    left: 52%;
-    transform: translate(-50%,-42%);
     background:#12c5e7;
     text-align: center;
     border-radius: 20px;
 }
-.box h1 
+#main-form .box h1 
 {
     color: white;
     font-weight: 700;
@@ -37,7 +59,7 @@ body
     outline: none;
     margin-bottom: 20px;
 }
-.box input[type="text"],.box input[type="date"],.box input[type="time"]
+#main-form .box input[type="text"],.box input[type="date"],.box input[type="time"]
 {
     border: 0;
     background: none;
@@ -53,18 +75,18 @@ body
     color: white;
     margin-top: 2px;
 }
-.box input[type="text"]:focus,.box input[type="date"]:focus,.box input[type="time"]:focus
+#main-form .box input[type="text"]:focus,.box input[type="date"]:focus,.box input[type="time"]:focus
 {
     width: 215px;
     border-color: #8b5e0b;
 }
-.box input[type="text"]::placeholder,.box input[type="date"]::placeholder,.box input[type="time"]::placeholder
+#main-form .box input[type="text"]::placeholder,.box input[type="date"]::placeholder,.box input[type="time"]::placeholder
 {
     color: white;
     opacity: 1;
 }
 
-.box input[type="submit"]
+#main-form .box input[type="submit"]
 {
     border: 0;
     background: none;
@@ -81,16 +103,16 @@ body
     color: white;
     opacity: 1;
 }
-.box input[type="submit"]:hover
+#main-form .box input[type="submit"]:hover
 {
     background: #9c12e7;
 }
-h2{
+#main-form h2{
     color: white;
     font-weight: 700;
     font-size: 15px;
 }
-p
+#main-form p
 {
     color: white;
     font-weight: 700;

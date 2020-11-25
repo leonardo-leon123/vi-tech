@@ -10,7 +10,7 @@
     {%include 'navbar.html'%}
 </header>
 <body>
-    <form class="box" action="#" method="post">
+    <form class="box" target="_blank" action="#" method="post">
         <h1>Formulario para generar el contrato de <strong> <br> Graduaciones </strong> </h1>
         <p>Nombre del Representante del grupo de estudiantes graduados</p>
         <input type="text" name="nm" placeholder="" autocomplete="on" required autofocus >
@@ -22,7 +22,8 @@
         <input type="text" name="lc" placeholder="" autocomplete="on" required autofocus>
         <p>Nombre de la Escuela</p>
         <input type="text" name="sc" placeholder="" autocomplete="on" required autofocus>
-        <input type="submit" value="Generar Contrato">    
+        <input type="submit" id="submit" value="Generar Contrato">    
     </form>
+    <script src="../static/js/set_badges.js"></script>
 </body>
 </html>

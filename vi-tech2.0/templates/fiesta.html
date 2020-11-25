@@ -10,7 +10,7 @@
     {%include 'navbar.html'%}
 </header>
 <body>
-    <form class="box" action="#" method="post">
+    <form class="box" target="_blank" action="#" method="post">
         <h1>Formulario para generar el contrato de <strong> <br> FIESTA GODÍN </strong> </h1>
         <p>Nombre del Jefe buena onda que va a patrocinar la fiesta</p>
         <input type="text" name="nm" placeholder="" autocomplete="on" required autofocus>
@@ -24,7 +24,8 @@
         <input type="text" name="comp" placeholder="" autocomplete="on" required autofocus>
         <p>Precio a pagar para cubrir los gastos adicionales </p>
         <input type="number" name="price" placeholder="" autocomplete="on" required autofocus> 
-        <input type="submit" value="Generar Contrato">    
+        <input type="submit" id="submit" value="Generar Contrato">    
     </form>
+    <script src="../static/js/set_badges.js"></script>
 </body>
 </html>

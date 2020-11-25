@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Document</title>
+    <script
+
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+  
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        {%include 'navbar2.html'%}
+    </header>
+
+<div class="main">
+    <section class="main-section">
+        <h1 class="hero" > ¡Bienvenido al portal de clientes! </h1>
+        <br>
+        <h2 class="hero"> Preparate y pregunta en el chat la información necesaria para tu evento </h2>
+        <div class="button"> 
+        </div>
+    </section>
+</div>
+<div class="chat_icon" >
+
+    <img src="../static/img/Chatblack.gif" class="eva">
+
+  </div>
+<div class="chat_box">
+    <div class="chat-header">
+        <iframe src='https://webchat.botframework.com/embed/Vitech-bot?s=I--tXA81d08.wiJmSSy4b9lERYb8P0NQE0J6iTc6q5ElET1zdcLSgfM'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+    </div>
+</div>
+</body>
+</html>
+<Style>
+    
+   .eva{
+       width: 90px;
+   }
+
+   .chat_icon{
+       position: fixed;
+       right: 30px;
+       bottom: 0%;
+       font-size: 80px;
+       color: darkgray;
+       cursor: pointer;
+       z-index: 1000;
+   }
+
+
+    .chat_box{
+        position: fixed;
+        top: 140px;
+        right: 20px;
+        bottom: 100px;
+        width: 400px;
+        height: 65vh;
+        background: #e9e1b7;
+        z-index: 1000;
+        transition: all 0.3s ease-out;
+        transform:scaleY(0) ;
+    }
+
+
+   .chat_box.active{
+       transform:scaleY(1);
+   }
+    
+</Style>
+<script>
+   $(document).ready(function(){
+       $('.chat_icon').click(function(event){
+           $('.chat_box').toggleClass('active');
+       });
+   })
+</script>

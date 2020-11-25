@@ -21,6 +21,7 @@
                 <div class="button"> 
                     {%if not current_user.is_authenticated%}<button> <a href=" {{url_for('auth.login')}} ">Iniciar Sesión</a></button>{%endif%}
                     {%if not current_user.is_authenticated%}<button> <a href=" {{url_for('auth.registro')}}"> Registrarse</a></button>{%endif%}
+                    {%if not current_user.is_authenticated%}<button> <a href=" {{url_for('app.clientes')}}"> ¿Tienes alguna duda?</a></button>{%endif%}
                     {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.bodas')}} "> Unión Matrimonial </a></button>{%endif%}
                     {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.xv')}}"> Quinceaños</a></button>{%endif%}
                     {%if current_user.is_authenticated%}<button> <a href=" {{url_for('app.grad')}}"> Graduación Universitaria</a></button>{%endif%}

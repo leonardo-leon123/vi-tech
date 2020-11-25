@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
-    <link rel="stylesheet" href="../static/inicio.css">
-    <title>Vi - Tech | Generar Contrato</title>
+    <title>Vi - Tech | Inicio</title>
 </head>
 <body>
     <header>
@@ -17,12 +16,10 @@
         <h1 class="hero" > ¡Bienvenido/a! <hr>
              {{current_user.nombre}} <br>  <br> ¡Al Generador de Contratos para eventos sociales con 1 sólo Click!  </h1>
         <br>
-        <h2 class="hero"> ¿Qué tipo de contrato quieres Generar? </h2>
+        <h2 class="hero"> ¿Qué quieres hacer con tus contratos? </h2>
         <div class="button"> 
-            <button> <a href=" {{url_for('app.bodas')}} "> Unión Matrimonial </a></button>
-            <button> <a href=" {{url_for('app.xv')}}"> Quinceaños</a></button>
-            <button> <a href=" {{url_for('app.grad')}}"> Graduación Universitaria</a></button>
-            <button> <a href=" {{url_for('app.fiesta')}}"> Fiesta Godín</a></button>
+            <button> <a href=" {{url_for('app.template_select')}} "> Crear un Nuevo contrato </a></button>
+            <button> <a href=" {{url_for('app.badges')}} "> Ver mis medallas </a></button>
         </div>
     </section>
 </div>

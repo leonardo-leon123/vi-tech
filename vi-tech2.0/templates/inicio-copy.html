@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/blur.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/files/bootstrap/css/bootstrap.min.css">
+    <!-- CSS personalizado --> 
+    <link rel="stylesheet" href="../static/files/main.css">  
+      
+      
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="../static/files/datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="../static/files/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:700,300'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="../static/files/progress.css">
+    <title>Vi - Tech | Inicio</title>
+</head>
+<body>
+    <header>
+        {%include 'navbar.html'%}
+    </header>
+
+    <input type="hidden" id="man" value="2">
+
+<div class="main">
+    <section class="main-section">
+      <h1 class="hero" > ¡Bienvenido/a! </h1>
+      <hr class=".hr">
+        <p class="username" > {{current_user.nombre}} </p>
+      <br> 
+      <h2>¡Al Generador de Contratos para eventos sociales con 1 sólo Click!</h2>
+      <br>
+      
+   <h2 class="hero"> ¿Qué quieres hacer con tus contratos? </h2>
+        <div class="button"> 
+          <button> <a href=" {{url_for('app.template_select')}} "> Crear un Nuevo contrato </a></button>
+          <button> <a href=" {{url_for('app.badges')}} "> Ver mis medallas </a></button>
+      </div>
+    </section>
+</div>
+
+<div class="modal fade" id="modalCRUD5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background: transparent;">
+            <meta charset="UTF-8">
+            <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+            <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:700,300'>
+            <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'><link rel="stylesheet" href="./style.css"> -->
+            <!-- <button class='open-walkthrough'>Start</button> -->
+            <div class='walkthrough show reveal'>
+                <div class='walkthrough-pagination'>
+                    <a class='dot active'></a>
+                    <a class='dot'></a>                            
+                    <a class='dot'></a>
+                    <a class='dot'></a>
+                    <a class='dot'></a>
+                </div>
+                <div class='walkthrough-body'>
+                    <ul class='screens animate'>
+                        <li class='screen active'>
+                            <div class='media logo'>
+                                <img class='logo' src='../static/img/icono menu.png'>
+                            </div>
+                            <h3>
+                                Paso 1
+                                <br>Elección de Eventos</br>
+                            </h3>
+                            <p>Elige de nuestro menú algunos de nuestros eventos como: Bodas, XV, Graduaciones y más.</p>
+                        </li>
+                        <li class='screen'>
+                            <div class='media books'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/book_icon_1.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/book_icon_2.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/book_icon_3.png'>
+                            </div>
+                            <h3>
+                                Paso 2
+                                <br>Seleciona un Documento</br>
+                            </h3>
+                            <p>Una vez elegido el evento selecciona el documento que deseas escanear, puedes elegir INE o Comprobante de Domicilio</p>
+                        </li>
+                        <li class='screen'>
+                            <div class='media bars'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/bar_icon_axis.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/bar_icon_3.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/bar_icon_2.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/bar_icon_1.png'> 
+                            </div>
+                            <h3>
+                                Paso 3
+                                <br>Formulario</br>
+                            </h3>
+                            <p>Recuerda llenar todos los campos faltantes del formulario despues de escanear tus documentos .</p>
+                        </li>
+                        <li class='screen'>
+                            <div class='media files'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/file_icon_1.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/file_icon_2.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/file_icon_3.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/file_icon_4.png'>
+                            </div>
+                            <h3>
+                                Paso 4
+                                <br>Genera el Contrato</br>
+                            </h3>
+                            <p>Revisa que la información sea correcta para poder generar de manera correcta tu contrato</p>
+                        </li>
+                        <li class='screen'>
+                            <div class='media comm'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/comm_icon_1.png'>
+                                <img class='icon' src='https://s3.amazonaws.com/jebbles-codepen/comm_icon_2.png'>
+                            </div>
+                            <h3>
+                                Paso 5
+                                <br>Visualiza tu información</br>
+                            </h3>
+                            <p>Si tienes alguna duda sobre algún evento puedes acudir a nuestro bot interactivo y con gusto te respondera</p>
+                        </li>
+                    </ul>
+                    <button class='prev-screen'>
+                        <i class='icon-angle-left'></i>
+                    </button>
+                    <button class='next-screen'>
+                        <i class='icon-angle-right'></i>
+                    </button>
+                </div>
+                <div class='walkthrough-footer'>
+                    <button class='button next-screen'>Next</button>
+                    <button class='button finish close' disabled='true'>Finish</button>
+                </div>
+            </div>
+            <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+            <script src="./script.js"></script>
+        </div>
+    </div>
+</div>          
+
+
+    <!-- <script src="../static/file/jquery/jquery-3.3.1.min.js"></script> 
+    <script src="../static/file/popper/popper.min.js"></script>
+    <script src="../static/file/bootstrap/js/bootstrap.min.js"></script>--> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- datatables JS -->
+    <script type="text/javascript" src="../static/files/datatables/datatables.min.js"></script>    
+    <script type="text/javascript" src="../static/files/mainDash.js"></script>
+
+
+
+
+</body>
+</html>
+<style>
+
+.walkthrough {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+  background: linear-gradient(to right bottom, #6B6B6B , #090909);
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  flex: 0 0 auto;
+  font-size: 14px;
+  height: 610px;
+  overflow: hidden;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 420px;
+  z-index: 1000;
+}
+.walkthrough.show {
+  display: flex;
+  opacity: 0;
+  transform: translateY(72px);
+}
+.walkthrough.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+.walkthrough .walkthrough-body {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+.walkthrough .walkthrough-body .prev-screen,
+.walkthrough .walkthrough-body .next-screen {
+  align-self: stretch;
+  background: none;
+  border: 0;
+  margin-top: 40px;
+  color: rgba(255, 253, 253, 0.774);
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 24px;
+  opacity: 1;
+  outline: none;
+  padding: 16px;
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1000;
+}
+.walkthrough .walkthrough-body .prev-screen:hover, .walkthrough .walkthrough-body .prev-screen:active,
+.walkthrough .walkthrough-body .next-screen:hover,
+.walkthrough .walkthrough-body .next-screen:active {
+  color: white;
+  transform-origin: center;
+  transform: scale(1.25);
+}
+.walkthrough .walkthrough-body .prev-screen:disabled,
+.walkthrough .walkthrough-body .next-screen:disabled {
+  opacity: 0;
+}
+.walkthrough .walkthrough-body .prev-screen {
+  order: 1;
+}
+.walkthrough .walkthrough-body .next-screen {
+  order: 3;
+}
+.walkthrough .walkthrough-body .screens {
+  flex: 1;
+  align-self: stretch;
+  position: relative;
+  margin: 0 -16px;
+  padding: 0;
+  order: 2;
+}
+.walkthrough .walkthrough-body .screens .screen {
+  position: absolute;
+  list-style-type: none;
+}
+.walkthrough .walkthrough-body .media {
+  background:rgba(255, 255, 255, 0.25);
+  border-radius: 132px;
+  height: 250px;
+  margin: 32px auto;
+  width: 250px;
+}
+
+.walkthrough .walkthrough-body h3 {
+  line-height: 1.4em;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+}
+.walkthrough .walkthrough-body p {
+  line-height: 1.6em;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding-top: 0;
+  color: #ffffff;;
+}
+.walkthrough .walkthrough-pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.walkthrough .walkthrough-pagination .dot {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  height: 8px;
+  margin: 0 4px;
+  transform: scale(0.75);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 8px;
+}
+.walkthrough .walkthrough-pagination .dot.active {
+  background: #ffffff;
+  transform: scale(1);
+  transition-delay: 0.4s;
+}
+.walkthrough .walkthrough-footer {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-around;
+  padding: 0;
+}
+.walkthrough .walkthrough-footer button {
+  height: 40px;
+  border: 0;
+  background: #D5B60E;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: 0;
+  color: white;
+  flex: 1;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 19px;
+  margin: 0;
+  outline: 0;
+  padding: 12px;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.walkthrough .walkthrough-footer button:hover {
+  background: #B99804;
+}
+.walkthrough .walkthrough-footer button:active {
+  background: #DABE20;
+}
+.walkthrough .walkthrough-footer button:disabled {
+  cursor: pointer;
+}
+.walkthrough .walkthrough-footer button.finish {
+  background: #D5B60E;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0, 1);
+  transform-origin: center;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.walkthrough .walkthrough-footer button.finish:hover {
+  background: #B99804;
+}
+.walkthrough .walkthrough-footer button.finish:active {
+  background: #DABE20;
+}
+.walkthrough .walkthrough-footer button.finish.active {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+.walkthrough .screens {
+  margin: 0;
+}
+.walkthrough .screens .media .status-badge {
+  left: 136px;
+  opacity: 0;
+  position: absolute;
+  top: 104px;
+  transform: scale(0);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .media .status-badge i {
+  display: inline;
+}
+.walkthrough .screens .mediaa.logo .logo {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 350px;
+  right: 20px;
+  top: 20px;
+  height: 295px;
+}
+.walkthrough .screens .media .icon {
+  position:absolute;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 350px;
+  right: 20px;
+  top: 20px;
+  height: 295px;
+}
+
+.walkthrough .screens .media.bars .icon {
+  transform: translate(40px, 20px);
+}
+.walkthrough .screens .media.bars .icon:nth-of-type(2) {
+  transform: scale(0.25);
+  transform-origin: 30% 54%;
+}
+.walkthrough .screens .media.bars .icon:nth-of-type(3) {
+  transform: scale(0.25);
+  transform-origin: 30% 40%;
+}
+.walkthrough .screens .media.bars .icon:nth-of-type(4) {
+  transform: scale(0.25);
+  transform-origin: 30% 26%;
+}
+.walkthrough .screens .media.files .icon {
+  transform: translate(40px, 20px);
+}
+.walkthrough .screens .media.comm .icon {
+  transform: scale(0.25);
+  transform-origin: 29% 73%;
+}
+.walkthrough .screens .media.comm .icon:nth-child(2) {
+  transform-origin: 66% 85%;
+}
+.walkthrough .screens .screen {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-72px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.walkthrough .screens .screen.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0.4s;
+}
+.walkthrough .screens .screen.active ~ .screen {
+  opacity: 0;
+  transform: translateX(72px);
+}
+.walkthrough .screens .screen.active .media .status-badge {
+  opacity: 1;
+  transform: scale(1.75);
+}
+.walkthrough .screens .screen.active .mediaa.logo .logo {
+  opacity: 0.8;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .screen.active .mediaa.logo .status-badge {
+  transition-delay: 1s;
+}
+.walkthrough .screens .screen.active .media.books .icon {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .screen.active .media.books .icon:nth-child(2) {
+  transition-delay: 0.725s;
+}
+.walkthrough .screens .screen.active .media.books .icon:nth-child(3) {
+  transition-delay: 0.850s;
+}
+.walkthrough .screens .screen.active .media.books .status-badge {
+  transition-delay: 1.4s;
+}
+.walkthrough .screens .screen.active .media.bars .icon {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .screen.active .media.bars .icon:nth-child(2) {
+  transition-delay: 1.050s;
+}
+.walkthrough .screens .screen.active .media.bars .icon:nth-child(3) {
+  transition-delay: 0.925s;
+}
+.walkthrough .screens .screen.active .media.bars .icon:nth-child(4) {
+  transition-delay: 0.8s;
+}
+.walkthrough .screens .screen.active .media.files .icon {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+.walkthrough .screens .screen.active .media.files .icon:nth-child(3) {
+  transition-delay: 0.8s;
+}
+.walkthrough .screens .screen.active .media.files .icon:nth-child(2) {
+  transition-delay: 0.7s;
+}
+.walkthrough .screens .screen.active .media.files .icon:nth-child(1) {
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .screen.active .media.files .status-badge {
+  transition-delay: 1.6s;
+}
+.walkthrough .screens .screen.active .media.comm .icon {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.6s;
+}
+.walkthrough .screens .screen.active .media.comm .icon:nth-child(2) {
+  transition-delay: 0.8s;
+}
+.walkthrough .screens .screen.active .media.comm .status-badge {
+  transition-delay: 1.6s;
+}
+</style>
+
+<script>
+  var man = $("#man").val();
+  if(man == 2){
+    $("#modalCRUD5").modal("show");
+
+}
+</script>
+                
+<script>
+  (function() {
+    $(document).ready(function() {
+      var walkthrough;
+      walkthrough = {
+        index: 0,
+        nextScreen: function() {
+          if (this.index < this.indexMax()) {
+            this.index++;
+            return this.updateScreen();
+          }
+        },
+        prevScreen: function() {
+          if (this.index > 0) {
+            this.index--;
+            return this.updateScreen();
+          }
+        },
+        updateScreen: function() {
+          this.reset();
+          this.goTo(this.index);
+          return this.setBtns();
+        },
+        setBtns: function() {
+          var $lastBtn, $nextBtn, $prevBtn;
+          $nextBtn = $('.next-screen');
+          $prevBtn = $('.prev-screen');
+          $lastBtn = $('.finish');
+          if (walkthrough.index === walkthrough.indexMax()) {
+            $nextBtn.prop('disabled', true);
+            $prevBtn.prop('disabled', false);
+            return $lastBtn.addClass('active').prop('disabled', false);
+          } else if (walkthrough.index === 0) {
+            $nextBtn.prop('disabled', false);
+            $prevBtn.prop('disabled', true);
+            return $lastBtn.removeClass('active').prop('disabled', true);
+          } else {
+            $nextBtn.prop('disabled', false);
+            $prevBtn.prop('disabled', false);
+            return $lastBtn.removeClass('active').prop('disabled', true);
+          }
+        },
+        goTo: function(index) {
+          $('.screen').eq(index).addClass('active');
+          return $('.dot').eq(index).addClass('active');
+        },
+        reset: function() {
+          return $('.screen, .dot').removeClass('active');
+        },
+        indexMax: function() {
+          return $('.screen').length - 1;
+        },
+        closeModal: function() {
+          $('.walkthrough, .shade').removeClass('reveal');
+          return setTimeout((() => {
+            $('.walkthrough, .shade').removeClass('show');
+            this.index = 0;
+            return this.updateScreen();
+          }), 200);
+        },
+        openModal: function() {
+          $('.walkthrough, .shade').addClass('show');
+          setTimeout((() => {
+            return $('.walkthrough, .shade').addClass('reveal');
+          }), 200);
+          return this.updateScreen();
+        }
+      };
+      $('.next-screen').click(function() {
+        return walkthrough.nextScreen();
+      });
+      $('.prev-screen').click(function() {
+        return walkthrough.prevScreen();
+      });
+      $('.close').click(function() {
+        return walkthrough.closeModal();
+      });
+      $('.open-walkthrough').click(function() {
+        return walkthrough.openModal();
+      });
+      walkthrough.openModal();
+      
+      // Optionally use arrow keys to navigate walkthrough
+      return $(document).keydown(function(e) {
+        switch (e.which) {
+          case 37:
+            // left
+            walkthrough.prevScreen();
+            break;
+          case 38:
+            // up
+            walkthrough.openModal();
+            break;
+          case 39:
+            // right
+            walkthrough.nextScreen();
+            break;
+          case 40:
+            // down
+            walkthrough.closeModal();
+            break;
+          default:
+            return;
+        }
+        e.preventDefault();
+      });
+    });
+  
+  }).call(this);
+  
+</script>

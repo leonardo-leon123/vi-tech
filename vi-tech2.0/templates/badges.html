@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='badges.css') }}">
+    <title>Vi - Tech | Mis Medallas</title>
+</head>
+<body>
+    <header>
+        {%include 'navbar.html'%}
+    </header>
+
+<div class="main">
+    <section class="main-section">
+        <h1> ¿Te crees muy bueno para escribir contratos? </h1>
+        <br>
+        <h1> ¡Demuestra de lo que estas hecho y se el primero en generar contratos para ganar medallas! </h1>
+        <br>
+        <h1 class="hero" > Has generado este numero de contratos: <hr>
+        <h2 id="numero_de_contratos" style="color: white;">¡Ningun Contrato Generado!</h2>
+        
+        <h2 class="hero"> ¿Qué esperas para ganar todas las medallas primero? </h2>
+        <div class="button"> 
+            <button> <a href=" #medallas "> Ver Las medallas </a></button>
+            <button> <a href=" {{url_for('app.template_select')}} "> Crear un Nuevo contrato </a></button>
+        </div>
+    </section>
+</div>
+<div class="medallas" id="medallas">
+    <h1> 1 - Contrato "Hierro" <img src="../static/img/hierro.png" width="100px"> </h1>
+        <h1> 5 - Contratos "Bronce" <img src="../static/img/bronce.png" width="100px"> </h1>
+        <h1> 10 - Contratos "Plata" <img src="../static/img/plata.png" width="100px"> </h1>
+        <h1> 50 - Contratos "Oro" <img src="../static/img/oro.png" width="100px"> </h1>
+        <h1> 100 - Contratos "Platinum" <img src="../static/img/platino.png" width="100px"> </h1>
+        <h1> 200 - Contratos "Diamante" <img src="../static/img/diamante.png" width="100px"> </h1>
+        <h1> 500 - Contratos "Maestro de los Contratos" <img src="../static/img/Maestro.png" width="100px"> </h1>
+        <h1> 1000 - Contratos "GranMaestro de los Contratos" <img src="../static/img/GranMaestro.png" width="100px"> </h1>
+        <h1> 10,000 - Contratos "El RETADOR 0.00001% no hay nadie como tú" <img src="../static/img/retador.png" width="100px"> </h1>
+        <br>
+</div>
+
+
+    <script src="../static/js/get_badges.js"></script>
+</body>
+</html>
