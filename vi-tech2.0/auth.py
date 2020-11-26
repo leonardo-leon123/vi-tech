@@ -21,7 +21,7 @@ def login_post():
 
     if not user or not check_password_hash(user.password,password):
         flash('Tu correo o contraseña son invalidos porfavor checa de nuevo')
-        return redirect(url_for('auth.set_cookie'))
+        return redirect(url_for('app.set_cookie'))
     
     login_user(user)
 
